@@ -4,8 +4,8 @@ import type {FactType} from '../utils/types';
 export const fetchFact = async (number: string, type: FactType): Promise<string> => {
   try {
     const url = type === 'date' 
-      ? `http://numbersapi.com/${number}/${type}?json` 
-      : `http://numbersapi.com/${number}/${type}?json`;
+      ? `/api/${number}/${type}?json` 
+      : `/api/${number}/${type}?json`;
     
     const response = await axios.get(url);
     return response.data.text;
