@@ -1,69 +1,100 @@
-# React + TypeScript + Vite
+Приложение "Факты о числах"
+https://i.imgur.com/5X8jK7l.png
+https://i.imgur.com/9JkLdQp.png
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Описание проекта
+Это одностраничное приложение, которое позволяет пользователям получать интересные факты о числах. Пользователь может выбрать тип информации (Math, Trivia, Date), ввести число или оставить поле пустым для случайного факта. Приложение обрабатывает ошибки ввода и отображает результаты на отдельной странице.
 
-Currently, two official plugins are available:
+Особенности
+Выбор типа информации (Math, Trivia, Date)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Поддержка случайных чисел
 
-## Expanding the ESLint configuration
+Валидация ввода с понятными сообщениями об ошибках
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Адаптивный дизайн
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Анимации и плавные переходы
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Локализация на русском языке
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Технологический стек
+React (v18) - основная библиотека
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+TypeScript - строгая типизация
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Redux Toolkit - управление состоянием
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+React Router (v6) - навигация
+
+CSS Modules/SCSS - стилизация
+
+БЭМ - методология именования классов
+
+Axios - HTTP-запросы
+
+Vite - сборка проекта
+
+GitHub Pages - хостинг
+
+Демо
+Посмотрите работающее приложение:
+https://gaigerov.github.io/devsolutions_test/
+
+Установка и запуск
+
+1. Клонирование репозитория
+   bash
+   git clone https://github.com/gaigerov/devsolutions_test.git
+   cd devsolutions_test
+2. Установка зависимостей
+   bash
+   npm install
+3. Запуск в режиме разработки
+   bash
+   npm run dev
+4. Сборка для production
+   bash
+   npm run build
+5. Локальный просмотр сборки
+   bash
+   npm run preview
+
+Структура проекта
+text
+src/
+├── components/
+│ ├── FactForm/ - форма ввода данных
+│ ├── FactDisplay/ - отображение результатов
+│ └── ErrorMessage/ - компонент ошибок
+├── pages/
+│ ├── HomePage.tsx - главная страница
+│ └── ResultsPage.tsx - страница результатов
+├── store/
+│ ├── factsSlice.ts - Redux slice
+│ ├── api.ts - API запросы
+│ ├── store.ts - Redux store
+│ └── hooks.ts - типизированные Redux хуки
+├── hooks/
+│ └── useValidation.ts - кастомный хук валидации
+├── utils/
+│ └── types.ts - типы TypeScript
+├── App.tsx - корневой компонент
+├── main.tsx - точка входа
+└── index.scss - глобальные стили
+
+Особенности реализации
+Типизированный Redux Store - строгая типизация состояния приложения
+
+Кастомные хуки - для валидации ввода и работы с API
+
+CSS Modules - изоляция стилей компонентов
+
+Адаптивный дизайн - поддержка мобильных устройств
+
+Локализация - все сообщения на русском языке
+
+Обработка ошибок - понятные сообщения об ошибках для пользователя
+
+Лицензия
+Этот проект распространяется под лицензией MIT. См. файл LICENSE для получения дополнительной информации.
