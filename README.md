@@ -71,7 +71,7 @@ src/
 │ ├── HomePage.tsx - главная страница
 │ └── ResultsPage.tsx - страница результатов
 ├── store/
-│ ├── factsSlice.ts - Redux slice
+│ ├── factsSlice.ts - Redux slice   
 │ ├── api.ts - API запросы
 │ ├── store.ts - Redux store
 │ └── hooks.ts - типизированные Redux хуки

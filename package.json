@@ -1,39 +1,32 @@
 {
     "name": "devsolutions_test",
-    "homepage": "https://gaigerov.github.io/devsolutions_test",
     "private": true,
     "version": "0.0.0",
-    "type": "module",
+    "homepage": "https://gaigerov.github.io/devsolutions_test",
     "scripts": {
         "dev": "vite",
-        "build": "tsc && vite build",
+        "build": "vite build",
         "preview": "vite preview",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d dist"
     },
     "dependencies": {
-        "@reduxjs/toolkit": "2.8.2",
-        "@types/react-redux": "7.1.34",
-        "axios": "1.10.0",
-        "react": "19.1.0",
-        "react-dom": "19.1.0",
-        "react-redux": "9.2.0",
-        "react-router-dom": "7.6.3",
-        "sass": "^1.89.2"
+        "@reduxjs/toolkit": "2.2.3",
+        "axios": "1.7.2",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "react-redux": "9.1.2",
+        "react-router-dom": "^6.23.1",
+        "redux": "5.0.1"
     },
     "devDependencies": {
-        "@eslint/js": "9.29.0",
-        "@types/react": "19.1.8",
-        "@types/react-dom": "19.1.6",
-        "@vitejs/plugin-react": "4.5.2",
-        "eslint": "9.29.0",
-        "eslint-plugin-react-hooks": "5.2.0",
-        "eslint-plugin-react-refresh": "0.4.20",
-        "gh-pages": "^6.3.0",
-        "globals": "16.2.0",
-        "sass-embedded": "1.89.2",
-        "typescript": "~5.8.3",
-        "typescript-eslint": "8.34.1",
-        "vite": "7.0.0"
+        "@types/node": "24.0.10",
+        "@types/react": "18.2.66",
+        "@types/react-dom": "18.2.22",
+        "@vitejs/plugin-react": "4.2.1",
+        "gh-pages": "6.3.0",
+        "sass": "1.89.2",
+        "typescript": "5.2.2",
+        "vite": "5.1.4"
     }
 }
