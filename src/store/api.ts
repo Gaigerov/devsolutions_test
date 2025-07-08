@@ -26,7 +26,7 @@ export const fetchFact = async (input: string, type: FactType): Promise<string> 
   const number = input.trim();
   const apiNumber = number === '' ? 'random' : number;
   
-  const tryRequest = async (protocol: 'https' | 'http') => {
+  const tryRequest = async (protocol: 'http' | 'https') => {
     try {
       const response = await axios.get(
         `${protocol}://numbersapi.com/${apiNumber}/${type}?json`,
@@ -38,7 +38,7 @@ export const fetchFact = async (input: string, type: FactType): Promise<string> 
     }
   };
 
-  return (await tryRequest('https')) || 
-         (await tryRequest('http')) || 
+  return (await tryRequest('http')) || 
+         (await tryRequest('https')) || 
          generateLocalFact(number || '42', type);
 };
