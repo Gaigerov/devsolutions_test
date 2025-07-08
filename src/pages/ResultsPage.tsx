@@ -20,7 +20,15 @@ const ResultsPage: React.FC = () => {
 
     return (
         <div className={styles.container}>
-            <FactDisplay {...data} />
+            <div className={styles.infoBox}>
+                {data.fact.includes('локальные данные') && (
+                    <div className={styles.warning}>
+                        ⚠️ Не удалось подключиться к серверу. Используем локальные данные.
+                    </div>
+                )}
+                <FactDisplay {...data} />
+            </div>
+
             <Link to="/" className={styles.backButton}>
                 Назад к поиску
             </Link>

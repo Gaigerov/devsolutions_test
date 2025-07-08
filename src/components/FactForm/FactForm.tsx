@@ -66,7 +66,13 @@ const FactForm: React.FC<FactFormProps> = ({onSubmit, loading}) => {
                 </label>
             </div>
 
-            {error && <div className={styles.error}>{error}</div>}
+            {error && (
+                <div className={styles.error}>
+                    {error.includes('CORS') || error.includes('сети') || error.includes('сервер')
+                        ? 'Ошибка соединения с сервером. Попробуйте позже.'
+                        : error}
+                </div>
+            )}
 
             <button
                 type="submit"

@@ -4,6 +4,19 @@
     padding: 20px;
     text-align: center;
 
+    .infoBox {
+        position: relative;
+    }
+
+    .warning {
+        background-color: #fff3cd;
+        color: #856404;
+        border: 1px solid #ffeeba;
+        padding: 10px;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+
     .backButton {
         display: inline-block;
         margin-top: 30px;

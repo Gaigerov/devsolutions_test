@@ -1,5 +1,5 @@
 import React from 'react';
-import {type FactData} from '../../utils/types';
+import type {FactData} from '../../utils/types';
 import styles from './FactDisplay.module.scss';
 
 const FactDisplay: React.FC<FactData> = ({number, type, fact}) => {

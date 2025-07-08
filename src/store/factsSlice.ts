@@ -1,6 +1,6 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import {fetchFact} from './api';
-import {type FactType, type FactData} from '../utils/types';
+import type {FactType, FactData} from '../utils/types';
 
 interface FactsState {
     data: FactData | null;
@@ -16,21 +16,20 @@ const initialState: FactsState = {
 
 export const getFact = createAsyncThunk(
     'facts/getFact',
-    async ({number, type}: {number: string; type: FactType}, {rejectWithValue}) => {
-        try {
-            const fact = await fetchFact(number, type);
-            return {number, type, fact};
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        } catch (error) {
-            return rejectWithValue('Ошибка при получении данных');
-        }
+    async ({number, type}: {number: string; type: FactType}) => {
+        const fact = await fetchFact(number, type);
+        return {number, type, fact};
     }
 );
 
 const factsSlice = createSlice({
     name: 'facts',
     initialState,
-    reducers: {},
+    reducers: {
+        clearError: (state) => {
+            state.error = null;
+        }
+    },
     extraReducers: (builder) => {
         builder
             .addCase(getFact.pending, (state) => {
@@ -43,9 +42,10 @@ const factsSlice = createSlice({
             })
             .addCase(getFact.rejected, (state, action) => {
                 state.loading = false;
-                state.error = action.payload as string;
+                state.error = action.error.message || 'Ошибка при получении данных';
             });
     },
 });
 
+export const {clearError} = factsSlice.actions;
 export default factsSlice.reducer;
